@@ -21,9 +21,13 @@
     </category-swiper>
     <product-swiper class="product-list slide-in2">
       <div v-for="(product, index) in productList" :key="index" :class="{'fadeIn': index > 1, 'fadeOut': index < productList.length - 2}" class="product-item" @click="handelProductClick">
-        <p>{{product.lable}}</p>
-        <p>{{product.price}}<span>{{product.capacity}}</span></p>
-        <img alt="icon" :src="require(`@/assets/icons/png/${product.pic}.png`)" :class="`product-img ${product.pic}`">
+        <div class="product-description">
+          <p>{{product.lable}}</p>
+          <p>{{product.price}}<span>{{product.capacity}}</span></p>
+        </div>
+        <div class="product-image-black">
+          <img :src="require(`@/assets/icons/png/${product.pic}.png`)" :class="`product-img ${product.pic}`">
+        </div>
       </div>
     </product-swiper>
     <bottom-navigation>
@@ -222,40 +226,43 @@ export default {
 .product-list
   margin-bottom 0px
 .product-item
-  display inline-block
-  vertical-align top
   width 240px
   height 375px
   background-color white
   border-radius 30px
-  text-align center
   margin 0px 20px
   line-height 365px
-  padding-top 30px
-  > p
-    line-height 24px
-    font-size 18px
-    margin 0
-    > span
+  padding 30px 0px
+  display flex
+  flex-direction column
+  justify-content space-between
+  align-items center
+  box-sizing border-box
+  .product-description
+    margin-bottom 5px
+    > p
       line-height 24px
-      font-size 12px
-      margin-left 5px
-.GentleSkinCleanser
-  margin-top 25px
-  width 101px
-  height 239px
-.EyeCream
-  margin-top 5px
-  width 129px
-  height 251px
-.HandCream
-  margin-top 45px
-  width 146px
-  height 122px
-.BathSalts
-  margin-top 12px
-  width 172px
-  height 236px
+      font-size 18px
+      margin 0
+      > span
+        line-height 24px
+        font-size 12px
+        margin-left 5px
+  .product-image-black
+    width 175px
+    height 295px
+    display flex
+    justify-content center
+    align-items center
+    overflow hidden
+    .product-img
+      width 100%
+    .GentleSkinCleanser
+      width 60%
+    .EyeCream
+      width 75%
+    .BathSalts
+      width 85%
 .product-cutscenes
   background-color #ffffff
   position fixed

@@ -3,9 +3,11 @@
     <div class="pink-container-wall"/>
     <div class="white-container-wall"/>
     <div class="detail-container">
-      <img alt="icon" :src="require(`@/assets/icons/png/GentleSkinCleanser2.png`)" class="detail-img">
-      <img alt="icon" :src="require(`@/assets/icons/png/GentleSkinCleanser.png`)" class="main-detail-img1">
-      <img alt="icon" :src="require(`@/assets/icons/png/GentleSkinCleanser.png`)" class="main-detail-img">
+      <div class="img-container">
+        <img :src="require(`@/assets/icons/png/GentleSkinCleanser2.png`)" :width="pxToVWToPx(140)" :height="pxToVWToPx(280)" :style="`top: ${pxToVWToPx(160)}px; left:${pxToVWToPx(185)}px`" class="detail-img">
+        <img :src="require(`@/assets/icons/png/GentleSkinCleanser.png`)" :width="pxToVWToPx(172)" :height="pxToVWToPx(408)" :style="`top: ${pxToVWToPx(82)}px; left:${pxToVWToPx(105)}px`" class="main-detail-img1">
+        <img :src="require(`@/assets/icons/png/GentleSkinCleanser.png`)" :width="pxToVWToPx(172)" :height="pxToVWToPx(408)" :style="`top: ${pxToVWToPx(80)}px; left:${pxToVWToPx(90)}px`" class="main-detail-img">
+      </div>
       <div class="description">
         <p class="lable">Gentle Skin Cleanser</p>
         <p class="sublable">$12.29<span>300 Ml</span></p>
@@ -59,7 +61,7 @@ export default {
     this.init()
     this.switchTween = gsap.to('.switch-button', {
       duration: 0.5,
-      x: 52,
+      x: pxToVWToPx(52),
       paused: true
     })
     this.mainTween = gsap.to('.main-detail-img', {
@@ -78,7 +80,7 @@ export default {
       duration: 1,
       rotation: -5,
       scale: 1.6,
-      y: 60,
+      y: pxToVWToPx(60),
       transformOrigin: '100% 100%',
       paused: true,
       onComplete: () => {
@@ -92,8 +94,8 @@ export default {
       rotation: 5,
       scale: 0.6,
       opacity: 1,
-      x: 52,
-      y: -73,
+      x: pxToVWToPx(52),
+      y: pxToVWToPx(-73),
       transformOrigin: '50% 100%',
       paused: true,
       onComplete: () => {
@@ -153,7 +155,8 @@ export default {
           this.$router.push('shoppingCartList')
         }
       })
-    }
+    },
+    pxToVWToPx: pxToVWToPx
   }
 }
 </script>
@@ -184,6 +187,7 @@ export default {
   width 100vw
   height 758px
   overflow hidden
+  pointer-events none
 .pink-cutscenes
   position absolute
   top 798px
@@ -214,34 +218,16 @@ export default {
   left 0
   width 100vw
   height 798px
-.main-detail-img
-  position absolute
-  width 172px
-  height 408px
-  top 80px
-  left 90px
-.main-detail-img1
-  position absolute
-  width 172px
-  height 408px
-  top 82px
-  left 105px
-  opacity 0
-.detail-img
-  position absolute
-  width 140px
-  height 280px
-  top 160px
-  left 185px
-.detail-img1
-  position absolute
-  width 140px
-  height 280px
-  top 160px
-  left 185px
-  opacity 1
+  overflow hidden
+  .img-container
+    position relative
+    width 100vw
+    height 515px
+    .main-detail-img, .main-detail-img1, .detail-img
+      position absolute
+    .main-detail-img1
+      opacity 0
 .description
-  margin-top 515px
   width 100vw
   text-align center
   color #FFFFFF

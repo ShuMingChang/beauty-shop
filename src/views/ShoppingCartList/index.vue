@@ -7,7 +7,7 @@
       </div>
       <div v-for="(product, index) in productList" :key="index" class="cart-product-black">
         <div class="product-img-black">
-          <img alt="icon" :src="require(`@/assets/icons/png/${product.pic}.png`)" class="product-img">
+          <img :src="require(`@/assets/icons/png/${product.pic}.png`)" class="product-img">
         </div>
         <div class="cart-product-detail">
           <p class="product-label">{{`${product.quantity}x ${product.lable}`}}</p>
@@ -145,8 +145,7 @@ export default {
       justify-content center
       align-items center
       .product-img
-        max-width 80px
-        max-height 95px
+        width 70%
     .cart-product-detail
       box-sizing border-box
       color #FFFFFF

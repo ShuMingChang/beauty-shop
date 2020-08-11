@@ -67,10 +67,11 @@ export default {
 
 <style  lang="stylus">
 .category-swiper
-  width 100%
+  display flex
+  width 100vw
   margin 0px auto 40px auto
   overflow hidden
-  white-space nowrap
 .scroll-content
-  display inline-block
+  display flex
+  flex-wrap nowrap
 </style>
