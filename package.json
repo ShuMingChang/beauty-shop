@@ -5,7 +5,8 @@
   "scripts": {
     "serve": "cross-env ENV_CONFIG=develop vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@better-scroll/core": "^2.0.0-beta.10",
@@ -40,6 +41,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^6.2.2",
+    "gh-pages": "^4.0.0",
     "postcss-pxtorem": "^5.1.1",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
