@@ -68,5 +68,5 @@ export default {
     top -20px
     left 0px
     z-index -1
-    scale 10
+    scale 1
 </style>
