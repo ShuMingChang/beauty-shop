@@ -37,7 +37,9 @@ export default {
         bounce: {
           left: true,
           right: true
-        }
+        },
+        disableMouse: false,
+        disableTouch: false
       })
       this.tween2 = gsap.from('.fadeIn', {
         duration: 1,
